@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Header from "./components/Header";
+import VideoList from "./components/VideoList";
+import VideoDetails from "./components/VideoDetails";
+import CommentList from "./components/CommentList";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import videosData from "./assets/Data/videos.json";
+import videosDetails from "./assets/Data/video-details.json";
+
+class App extends Component {
+  state = {
+    currentVideoId: "1af0jruup5gu",
+    videos: videosData,
+    videosDescreption: videosDetails,
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <VideoDetails
+          VideosDescreption={this.state.videosDescreption}
+          currentVideoId={this.state.currentVideoId}
+        />
+        <VideoList
+          videos={this.state.videos}
+          currentVideoId={this.state.currentVideoId}
+        />
+        <CommentList
+          currentVideoId={this.state.currentVideoId}
+          VideosDescreption={this.state.videosDescreption}
+        />
+      </div>
+    );
+  }
 }
 
 export default App;
