@@ -1,0 +1,12 @@
+@import "./partials/variables";
+@import "./partials/mixin";
+@import "./partials/general";
+@import "./partials/font";
+@import "./component/header";
+@import "./component/videoList";
+
+.banner {
+  &__video {
+    width: 100%;
+  }
+}

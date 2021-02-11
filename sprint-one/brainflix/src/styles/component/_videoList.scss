@@ -1,0 +1,9 @@
+@import "../partials/variables";
+@import "../partials/mixin";
+@import "../partials/general";
+.videoList {
+  &__img {
+    width: 7.5rem;
+    height: 4.37rem;
+  }
+}

@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 
+
 function VideoList(props){
+
     return(
+
         <ul className="videoList">
             {props.videos
             .filter((video)=> video.id !== props.currentVideoId)
@@ -12,6 +15,7 @@ function VideoList(props){
             </li>            
              ))}
         </ul>
+     
     );
 }
 export default VideoList;
