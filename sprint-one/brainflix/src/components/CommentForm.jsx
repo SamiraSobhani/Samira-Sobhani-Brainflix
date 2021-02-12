@@ -4,13 +4,17 @@ function CommentForm (props){
 
 return(
     <>
-    <h5>{props.commentCounter} Comments</h5>
-    <form>
-        <label htmlFor="form__input"></label>
-        <input id="form__input" className="form__input" type="text" placeholder="That was easily the most spectacular BMX moment ever."/>
-<button type="submit">Comment</button>
-
-    </form>
+    <h5 className="form__commentCounter container">{props.commentCounter} Comments</h5>
+    <section className="form container">
+        <div className="form__comment">
+            <span className="form__image"></span>
+        </div>
+        <form className="form__add">
+            <label className="form__lable" htmlFor="form__lable">JOIN THE CONVERSATION</label>
+            <input className="form__input" id="form__lable" type="text" placeholder="Add a comment"/>
+            <button className="form__button" type="submit">Comment</button>
+        </form>
+        </section>
     </>
 );
 

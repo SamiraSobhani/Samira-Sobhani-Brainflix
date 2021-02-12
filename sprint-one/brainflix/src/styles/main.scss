@@ -4,6 +4,8 @@
 @import "./partials/font";
 @import "./component/header";
 @import "./component/videoList";
+@import "./component/videoDetails";
+@import "./component/commentForm";
 
 .banner {
   &__video {

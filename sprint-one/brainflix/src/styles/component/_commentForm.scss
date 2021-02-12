@@ -1,0 +1,59 @@
+@import "../partials/variables";
+@import "../partials/mixin";
+@import "../partials/general";
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  &__commentCounter {
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  &__add {
+    display: flex;
+    flex-direction: column;
+    width: 77%;
+  }
+  &__lable {
+    color: $silver;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  &__input {
+    height: 5rem;
+    font-size: 0.81rem;
+    margin-bottom: 1rem;
+    border-radius: 0.2rem;
+    background-color: $lightgray;
+
+    border: solid 0.01rem $Mercury;
+    &:focus {
+      outline: none;
+      border-color: $lightBlue;
+      border-width: 0.04rem;
+    }
+  }
+  &__button {
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    height: 3rem;
+    background-color: $lightBlue;
+    color: $white;
+    border-radius: 0.3rem;
+    border: none;
+  }
+  &__image {
+    height: 3rem;
+    width: 3rem;
+    background-image: url(../../assets/Images/Mohan-muruge.jpg);
+    border-radius: 50%;
+    background-position: left;
+    background-size: cover;
+    margin-top: 1.3rem;
+  }
+  &__comment {
+    display: flex;
+  }
+}

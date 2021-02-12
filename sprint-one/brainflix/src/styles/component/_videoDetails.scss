@@ -1,0 +1,57 @@
+@import "../partials/variables";
+@import "../partials/mixin";
+@import "../partials/general";
+
+.details {
+  &__head {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  &__channeltime {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    justify-content: baseline;
+  }
+  &__channel {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  &__time {
+    margin-left: 0.5rem;
+    color: $silver;
+  }
+}
+.details {
+  &__vIcon {
+    margin-right: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  &__lIcon {
+    margin-right: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  &__viewsLikes {
+    border-bottom: 0.02rem solid $Mercury;
+    margin-bottom: 1.5rem;
+    display: flex;
+  }
+  &__views {
+    margin-right: 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  &__likes {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  &__description {
+    font-size: 0.81rem;
+    line-height: 1.12rem;
+    font-weight: 500;
+  }
+}
