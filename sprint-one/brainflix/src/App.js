@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import videosData from "./assets/Data/videos.json";
 import videosDetails from "./assets/Data/video-details.json";
+import moment from "moment";
 
 import "./styles/main.scss";
 import PlayVideo from "./components/PlayVideo";
@@ -17,6 +18,14 @@ class App extends Component {
     videosDescreption: videosDetails,
   };
 
+  updateVideoId = (id) => {
+    this.setState({ currentVideoId: id });
+  };
+
+  formatedDate = (timeStamp) => {
+    return moment(timeStamp).fromNow();
+  };
+
   render() {
     return (
       <div className="App">
@@ -28,14 +37,18 @@ class App extends Component {
         <VideoDetails
           VideosDescreption={this.state.videosDescreption}
           currentVideoId={this.state.currentVideoId}
+          formatedDate={this.formatedDate}
         />
+        
         <CommentList
           currentVideoId={this.state.currentVideoId}
           VideosDescreption={this.state.videosDescreption}
+          formatedDate={this.formatedDate}
         />
         <VideoList
           videos={this.state.videos}
           currentVideoId={this.state.currentVideoId}
+          updateVideoId={this.updateVideoId}
         />
       </div>
     );

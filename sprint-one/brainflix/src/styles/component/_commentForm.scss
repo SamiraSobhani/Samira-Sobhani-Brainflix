@@ -5,6 +5,7 @@
 .form {
   display: flex;
   justify-content: space-between;
+  border-bottom: 0.1rem solid $Mercury;
   &__commentCounter {
     margin-top: 2.5rem;
     margin-bottom: 2rem;
@@ -21,13 +22,18 @@
     margin-bottom: 0.5rem;
   }
   &__input {
-    height: 5rem;
     font-size: 0.81rem;
+    height: 5rem;
+    font-family: AvenirNext LT Pro;
+    font-weight: 500;
     margin-bottom: 1rem;
     border-radius: 0.2rem;
     background-color: $lightgray;
-
-    border: solid 0.01rem $Mercury;
+    border: solid 0.07rem $Mercury;
+    overflow-wrap: break-word;
+    overflow: visible;
+    word-wrap: break-word;
+    white-space: normal;
     &:focus {
       outline: none;
       border-color: $lightBlue;
@@ -43,6 +49,9 @@
     color: $white;
     border-radius: 0.3rem;
     border: none;
+    &:focus {
+      outline: none;
+    }
   }
   &__image {
     height: 3rem;

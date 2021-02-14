@@ -4,13 +4,6 @@ import views from "../assets/Icons/Icon-views.svg"
 import likes from "../assets/Icons/Icon-likes.svg"
 
 function VideoDetails(props){
-    // const myDate = new Date(descreption.timestamp);
-    // const formatedDate =
-    //   myDate.getDate() +
-    //   "/" +
-    //   (myDate.getMonth() + 1) +
-    //   "/" +
-    //   myDate.getFullYear();
 
     return(
     props.VideosDescreption
@@ -20,7 +13,7 @@ function VideoDetails(props){
         <h1 className="details__head">{descreption.title}</h1>
         <div className="details__channeltime">
             <h3 className="details__channel">By {descreption.channel}</h3>
-            <span className="details__time">{descreption.timestamp}</span>
+            <span className="details__time">{props.formatedDate(descreption.timestamp)}</span>
         </div>
         <div className="details__viewsLikes">
             <img className="details__vIcon" src={views} alt=""/>

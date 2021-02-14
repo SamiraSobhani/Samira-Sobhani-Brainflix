@@ -9,14 +9,21 @@ function Comments (props){
   return(
     <>
     <CommentForm commentCounter={counter}/>
-    <ul>
-    {currentVideo.comments.map((comment)=>(
+    <ul className="comment container">
+    {currentVideo.comments.map((Comment)=>(
       
-            <li key={comment.id}>
-            <div className="comment__img"></div>
-            <h5>{comment.name}</h5>
-            <span>{comment.timestamp}</span>
-            <p>{comment.comment}</p>
+            <li className="comment__list" key={Comment.id}>
+              <div className="comment__imgDiv">
+                <div className="comment__img"></div>
+              </div>
+              <div className="comment__detail">
+                <div className="comment__nameDate">
+                  <h5 className="comment__name">{Comment.name}</h5>
+                  <span className="comment__date">{props.formatedDate(Comment.timestamp)}</span>
+                </div>
+                <p className="comment__text">{Comment.comment}</p>
+              </div>
+
             </li>
         ))
     }

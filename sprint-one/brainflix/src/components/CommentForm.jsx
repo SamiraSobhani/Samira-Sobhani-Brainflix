@@ -11,10 +11,10 @@ return(
         </div>
         <form className="form__add">
             <label className="form__lable" htmlFor="form__lable">JOIN THE CONVERSATION</label>
-            <input className="form__input" id="form__lable" type="text" placeholder="Add a comment"/>
-            <button className="form__button" type="submit">Comment</button>
+            <textarea className="form__input" id="form__lable" type="text" placeholder=" Write comment here"/>
+            <button className="form__button" type="submit">COMMENT</button>
         </form>
-        </section>
+    </section>
     </>
 );
 
