@@ -9,11 +9,26 @@
   &__commentCounter {
     margin-top: 2.5rem;
     margin-bottom: 2rem;
+    @include tablet {
+      margin-top: 4rem;
+      justify-content: baseline;
+    }
   }
   &__add {
     display: flex;
     flex-direction: column;
     width: 77%;
+    @include tablet {
+      flex-direction: row;
+      width: 92%;
+    }
+  }
+  &__lableInput {
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      margin-right: 1rem;
+    }
   }
   &__lable {
     color: $silver;
@@ -22,6 +37,7 @@
     margin-bottom: 0.5rem;
   }
   &__input {
+    width: 100%;
     font-size: 0.81rem;
     height: 5rem;
     font-family: AvenirNext LT Pro;
@@ -30,14 +46,15 @@
     border-radius: 0.2rem;
     background-color: $lightgray;
     border: solid 0.07rem $Mercury;
-    overflow-wrap: break-word;
-    overflow: visible;
-    word-wrap: break-word;
-    white-space: normal;
     &:focus {
       outline: none;
       border-color: $lightBlue;
       border-width: 0.04rem;
+    }
+    @include tablet {
+      height: 3rem;
+      width: 27.5rem;
+      margin-bottom: 1.5rem;
     }
   }
   &__button {
@@ -52,17 +69,22 @@
     &:focus {
       outline: none;
     }
+    @include tablet {
+      margin-right: 2.5rem;
+      width: 10rem;
+      padding: 0;
+      margin-bottom: 0rem;
+      margin-top: 1.35rem;
+    }
   }
   &__image {
-    height: 3rem;
-    width: 3rem;
-    background-image: url(../../assets/Images/Mohan-muruge.jpg);
-    border-radius: 50%;
-    background-position: left;
-    background-size: cover;
     margin-top: 1.3rem;
   }
   &__comment {
     display: flex;
+    @include tablet {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
   }
 }

@@ -1,0 +1,21 @@
+@import "../partials/variables";
+@import "../partials/mixin";
+@import "../partials/general";
+
+.banner {
+  background-color: black;
+  @include tablet {
+    height: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  &__video {
+    width: 100%;
+    height: 11.43rem;
+    @include tablet {
+      width: 43.75rem;
+      height: auto;
+    }
+  }
+}

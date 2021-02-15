@@ -5,17 +5,16 @@ import uploadIcon from "../assets/Icons/Icon-upload.svg";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import Input from "@material-ui/core/Input";
 import Icon from "@material-ui/core/Icon";
-
+import UserImage from "./UserImage";
 
 class Header extends Component {
   render() {
     return (
       <section className="header container">
         <img className="header__logo" src={logo} alt="logo" />
-        
 
         <Input
-        className="header__search"
+          className="header__search"
           placeholder="Search"
           id="standard-adornment-amount"
           startAdornment={
@@ -28,9 +27,9 @@ class Header extends Component {
         />
         <div className="header__btnimg">
           <button className="header__button" type="submit">
-           <img className="header__buttonIcon" src={uploadIcon} ></img>UPLOAD
+            <img className="header__buttonIcon" src={uploadIcon}></img>UPLOAD
           </button>
-          <span className="header__userImg"></span>
+          <UserImage />
         </div>
       </section>
     );

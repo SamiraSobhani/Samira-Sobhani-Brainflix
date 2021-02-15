@@ -39,7 +39,7 @@ class App extends Component {
           currentVideoId={this.state.currentVideoId}
           formatedDate={this.formatedDate}
         />
-        
+
         <CommentList
           currentVideoId={this.state.currentVideoId}
           VideosDescreption={this.state.videosDescreption}

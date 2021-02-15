@@ -7,8 +7,8 @@ function PlayVideo(props){
         props.VideoPoster
     .filter((video)=>video.id === props.currentVideoId)
     .map((video)=>(
-        <section className="banner">
-        <video className="banner__video" controls poster={video.image}></video>
+        <section key={props.currentVideoId} className="banner">
+          <video className="banner__video" controls poster={video.image}></video>
         </section>
     )))
 }

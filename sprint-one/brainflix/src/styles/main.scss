@@ -7,9 +7,6 @@
 @import "./component/videoDetails";
 @import "./component/commentForm";
 @import "./component/commentList";
+@import "./component/userImage";
+@import "./component/playVideo";
 
-.banner {
-  &__video {
-    width: 100%;
-  }
-}

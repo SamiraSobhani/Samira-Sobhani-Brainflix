@@ -12,6 +12,9 @@
   }
   &__imgDiv {
     width: 20%;
+    @include tablet {
+      width: 8%;
+    }
   }
   &__img {
     height: 2.5rem;
@@ -25,16 +28,27 @@
     flex-direction: column;
     width: 80%;
     margin-bottom: 0.5rem;
+    @include tablet {
+      width: 39rem;
+    }
   }
   &__nameDate {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     margin-top: 0.4rem;
+    @include tablet {
+      justify-content: unset;
+    }
   }
   &__name {
     margin-bottom: 0;
     font-size: 0.87rem;
+    @include tablet {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-right: 0.7rem;
+    }
   }
   &__date {
     color: $silver;
@@ -44,5 +58,9 @@
     font-size: 0.85rem;
     line-height: 1.12rem;
     font-weight: 500;
+    @include tablet {
+      line-height: 1.25rem;
+      font-size: 0.87rem;
+    }
   }
 }

@@ -11,9 +11,15 @@
     font-weight: 500;
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
+    @include tablet {
+      font-size: 0.82rem;
+    }
   }
   &__items {
     display: flex;
+    @include tablet {
+      width: 50%;
+    }
   }
   &__img {
     min-width: 7.5rem;
@@ -30,15 +36,27 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    @include tablet {
+      font-size: 0.98rem;
+      font-weight: 600;
+      line-height: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
   }
   &__details {
     display: flex;
     flex-direction: column;
     margin-left: 1rem;
+    @include tablet {
+      margin-left: 1.5rem;
+    }
   }
   &__channel {
     margin-top: 0;
     font-size: 0.81rem;
     font-weight: 500;
+    @include tablet {
+      font-size: 0.87rem;
+    }
   }
 }

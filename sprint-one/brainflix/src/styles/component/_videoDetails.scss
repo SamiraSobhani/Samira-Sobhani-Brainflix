@@ -8,12 +8,28 @@
     line-height: 2rem;
     font-weight: bold;
     margin-bottom: 1rem;
+    @include tablet {
+      font-size: 2.25rem;
+      margin-bottom: 1.5rem;
+      margin-top: 3rem;
+    }
+  }
+  &__all {
+    border-bottom: 0.02rem solid $Mercury;
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
   }
   &__channeltime {
     display: flex;
     align-items: center;
     margin-bottom: 2rem;
     justify-content: baseline;
+    @include tablet {
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+    }
   }
   &__channel {
     font-size: 0.95rem;
@@ -37,8 +53,6 @@
     margin-bottom: 1.5rem;
   }
   &__viewsLikes {
-    border-bottom: 0.02rem solid $Mercury;
-    margin-bottom: 1.5rem;
     display: flex;
   }
   &__views {
@@ -54,5 +68,12 @@
     font-size: 0.81rem;
     line-height: 1.12rem;
     font-weight: 500;
+    margin-top: 1.5rem;
+    @include tablet {
+      font-size: 0.87rem;
+      margin-top: 2.5rem;
+      width: 73%;
+      line-height: 1.37rem;
+    }
   }
 }
