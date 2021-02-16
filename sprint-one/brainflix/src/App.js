@@ -34,22 +34,29 @@ class App extends Component {
           VideoPoster={this.state.videos}
           currentVideoId={this.state.currentVideoId}
         />
-        <VideoDetails
-          VideosDescreption={this.state.videosDescreption}
-          currentVideoId={this.state.currentVideoId}
-          formatedDate={this.formatedDate}
-        />
+        <main className="main">
+          <div className="main__DetailsComment">
+            <VideoDetails
+              VideosDescreption={this.state.videosDescreption}
+              currentVideoId={this.state.currentVideoId}
+              formatedDate={this.formatedDate}
+            />
 
-        <CommentList
-          currentVideoId={this.state.currentVideoId}
-          VideosDescreption={this.state.videosDescreption}
-          formatedDate={this.formatedDate}
-        />
-        <VideoList
-          videos={this.state.videos}
-          currentVideoId={this.state.currentVideoId}
-          updateVideoId={this.updateVideoId}
-        />
+            <CommentList
+              currentVideoId={this.state.currentVideoId}
+              VideosDescreption={this.state.videosDescreption}
+              formatedDate={this.formatedDate}
+            />
+          </div>
+
+          <div>
+            <VideoList
+              videos={this.state.videos}
+              currentVideoId={this.state.currentVideoId}
+              updateVideoId={this.updateVideoId}
+            />
+          </div>
+        </main>
       </div>
     );
   }

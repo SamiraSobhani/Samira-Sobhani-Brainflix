@@ -8,8 +8,9 @@
     line-height: 2rem;
     font-weight: bold;
     margin-bottom: 1rem;
+    margin-top: 2rem;
     @include tablet {
-      font-size: 2.25rem;
+      font-size: 2.26rem;
       margin-bottom: 1.5rem;
       margin-top: 3rem;
     }
@@ -36,6 +37,9 @@
     font-weight: 600;
     margin-top: 0;
     margin-bottom: 0;
+    @include desktop {
+      font-size: 1rem;
+    }
   }
   &__time {
     margin-left: 0.5rem;
@@ -54,6 +58,9 @@
   }
   &__viewsLikes {
     display: flex;
+    @include desktop {
+      margin-right: 2rem;
+    }
   }
   &__views {
     margin-right: 1.5rem;
@@ -75,5 +82,8 @@
       width: 73%;
       line-height: 1.37rem;
     }
+  }
+  @include desktop {
+    width: 44.5rem;
   }
 }

@@ -10,3 +10,13 @@
 @import "./component/userImage";
 @import "./component/playVideo";
 
+.main {
+  @include desktop {
+    display: flex;
+  }
+  &__DetailsComment {
+    @include desktop {
+      margin-right: 2rem;
+    }
+  }
+}

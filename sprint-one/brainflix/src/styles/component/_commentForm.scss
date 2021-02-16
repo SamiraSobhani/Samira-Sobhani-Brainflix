@@ -42,24 +42,27 @@
     height: 5rem;
     font-family: AvenirNext LT Pro;
     font-weight: 500;
-    margin-bottom: 1rem;
     border-radius: 0.2rem;
     background-color: $lightgray;
-    border: solid 0.07rem $Mercury;
+    border: solid 0.02rem $Mercury;
     &:focus {
       outline: none;
       border-color: $lightBlue;
-      border-width: 0.04rem;
+      border-width: 0.1rem;
     }
     @include tablet {
       height: 3rem;
       width: 27.5rem;
       margin-bottom: 1.5rem;
     }
+    @include desktop {
+      width: 27.25rem;
+    }
   }
   &__button {
     font-size: 0.9rem;
     font-weight: 400;
+    margin-top: 1rem;
     margin-bottom: 1.5rem;
     height: 3rem;
     background-color: $lightBlue;
