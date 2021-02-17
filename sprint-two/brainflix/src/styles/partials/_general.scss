@@ -1,0 +1,27 @@
+@import "../partials/variables";
+@import "../partials/mixin";
+
+* {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+body {
+  font-family: AvenirNext LT Pro, sans-serif;
+  color: $black;
+  margin: 0;
+}
+.container {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  @include tablet {
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+  }
+  @include desktop {
+    margin-left: 11rem;
+    margin-right: 0;
+  }
+}
+ul {
+  list-style: none;
+}

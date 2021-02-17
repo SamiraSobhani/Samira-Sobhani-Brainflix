@@ -1,0 +1,22 @@
+@import "./partials/variables";
+@import "./partials/mixin";
+@import "./partials/general";
+@import "./partials/font";
+@import "./component/header";
+@import "./component/videoList";
+@import "./component/videoDetails";
+@import "./component/commentForm";
+@import "./component/commentList";
+@import "./component/userImage";
+@import "./component/playVideo";
+
+.main {
+  @include desktop {
+    display: flex;
+  }
+  &__DetailsComment {
+    @include desktop {
+      margin-right: 2rem;
+    }
+  }
+}

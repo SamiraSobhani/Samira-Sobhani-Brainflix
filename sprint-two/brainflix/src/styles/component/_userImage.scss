@@ -1,0 +1,12 @@
+@import "../partials/variables";
+@import "../partials/mixin";
+@import "../partials/general";
+
+.header__userImg {
+  height: 3rem;
+  width: 3rem;
+  background-image: url(../../assets/Images/Mohan-muruge.jpg);
+  border-radius: 50%;
+  background-position: left;
+  background-size: cover;
+}
