@@ -1,21 +1,27 @@
 import React, { Component } from "react";
-import videosData from "./assets/Data/videos.json";
-import videosDetails from "./assets/Data/video-details.json";
 import moment from "moment";
-
 import "./styles/main.scss";
+import axios from "axios";
+
+import Header from "./components/Header";
 import PlayVideo from "./components/PlayVideo";
 import VideoList from "./components/VideoList";
-import VideoDetails from "./components/VideoDetails";
 import CommentList from "./components/CommentList";
 import CommentForm from "./components/CommentForm";
-import Header from "./components/Header";
+import VideoDetails from "./components/VideoDetails";
+
 
 class App extends Component {
   state = {
     currentVideoId: "1af0jruup5gu",
-    videos: videosData,
-    videosDescreption: videosDetails,
+    videosDescription: {
+      id: "",
+      title: "",
+      name: "",
+      comments: [],
+      timestamp: "",
+    },
+    videos: [],
   };
 
   updateVideoId = (id) => {
@@ -24,6 +30,45 @@ class App extends Component {
 
   formatedDate = (timeStamp) => {
     return moment(timeStamp).fromNow();
+  };
+
+  getVideoList = () => {
+    axios
+      .get(
+        "https://project-2-api.herokuapp.com/videos?api_key=0bd5893b-5519-44c9-9aa7-fc5fdcdbab73"
+      )
+      .then((response) => {
+        if (response.data.length !== 0) {
+          this.setState({ videos: response.data });
+        }
+      })
+      .catch((error) => console.log(error));
+  };
+
+  getVideoDetails = (currentVideoId) => {
+    axios
+      .get(
+        `https://project-2-api.herokuapp.com/videos/${currentVideoId}?api_key=0bd5893b-5519-44c9-9aa7-fc5fdcdbab73`
+      )
+      .then((response) => {
+        this.setState({ videosDescription: response.data });
+      })
+      .catch((error) => console.log(error));
+  };
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log("comp updated", this.props);
+    // watch out for infinite loops here!
+    const { id } = this.props.match.params; // destructuring, makes long lines of code shorter/more readable
+    // when comparing with scrict equality check === you may need to convert one value to a Number e.g. Number(id)
+    if (id !== undefined && prevState.VideosDescription.id !== Number(id)) {
+      this.getVideoDetails(id);
+    }
+  };
+
+  componentDidMount() {
+    console.log(this.getVideoList());
+    this.getVideoDetails("1af0jruup5gu");
   };
 
   render() {
@@ -37,14 +82,14 @@ class App extends Component {
         <main className="main">
           <div className="main__DetailsComment">
             <VideoDetails
-              VideosDescreption={this.state.videosDescreption}
+              VideosDescription={this.state.videosDescription}
               currentVideoId={this.state.currentVideoId}
               formatedDate={this.formatedDate}
             />
 
             <CommentList
               currentVideoId={this.state.currentVideoId}
-              VideosDescreption={this.state.videosDescreption}
+              VideosDescription={this.state.videosDescription}
               formatedDate={this.formatedDate}
             />
           </div>

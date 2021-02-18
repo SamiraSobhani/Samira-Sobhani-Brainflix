@@ -2,15 +2,16 @@ import React, { Component } from "react";
 import CommentForm from"./CommentForm";
 
 function Comments (props){
-
-    const currentVideo=props.VideosDescreption
-    .find((descreption)=> descreption.id === props.currentVideoId)
-    const counter=currentVideo.comments.length;
+ 
+    // const currentVideo=props.VideosDescreption
+    // .find((description)=> description.id === props.currentVideoId)
+    const counter=props.VideosDescription.comments.length;
   return(
+    
     <>
     <CommentForm commentCounter={counter}/>
     <ul className="comment container">
-    {currentVideo.comments.map((Comment)=>(
+    {props.VideosDescription.comments.map((Comment)=>(
       
             <li className="comment__list" key={Comment.id}>
               <div className="comment__imgDiv">
