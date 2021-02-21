@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./styles/main.scss";
 
 import Header from "./components/Header";
 import UploadHead from "./components/UploadHead";
@@ -12,9 +13,13 @@ class Upload extends Component {
     return (
       <div>
         <Header />
-        <UploadHead />
-        <UploadImage />
-        <UploadForm />
+        <main className="container uploadMain">
+          <UploadHead />
+          <div className="imageForm">
+            <UploadImage />
+            <UploadForm />
+          </div>
+        </main>
         <UploadButton />
       </div>
     );

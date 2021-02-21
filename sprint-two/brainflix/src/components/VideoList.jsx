@@ -3,7 +3,10 @@ import {Link} from "react-router-dom";
 
 function VideoList(props){
 
-
+    const MyStyle={
+        color:"white",
+        textDecoration:"none"
+      };
 
     return(
         <ul className="videoList container">
@@ -11,10 +14,10 @@ function VideoList(props){
             {props.videos
             .filter((video)=> video.id !== props.currentVideoId)
             .map((video) =>(
-            <li className="videoList__items" key={video.id} onClick={() =>{ props.updateVideoId(video.id)}}>
-                <Link to={`https://project-2-api.herokuapp.com/videos/${video.id}?api_key=0bd5893b-5519-44c9-9aa7-fc5fdcdbab73`}>
+            <li  key={video.id} onClick={() =>{ props.updateVideoId(video.id)}}>
+                <Link className="videoList__items" style={{textDecoration:"none"}}  to={`/videos/${video.id}`}>
                 <img className="videoList__img" src={video.image} alt=""/>
-                <div className="videoList__details">
+                <div className="videoList__details" >
                     <h3 className="videoList__title" >{video.title}</h3>
                     <p className="videoList__channel">{video.channel}</p>
                 </div>

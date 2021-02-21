@@ -1,0 +1,46 @@
+@import "../partials/variables";
+@import "../partials/mixin";
+@import "../partials/general";
+
+.form {
+  display: flex;
+  flex-direction: column;
+  @include tablet {
+    border-bottom: solid 0.06rem $Mercury;
+  }
+  @include desktop {
+    width: 100%;
+    border-bottom: none;
+    margin-left: 1.5rem;
+  }
+  &__title {
+    color: $silver;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  &__addTitle {
+    @include uploadInput;
+    height: 3rem;
+    margin-bottom: 1.5rem;
+    padding-top: 0.5rem;
+  }
+  &__description {
+    color: $silver;
+    font-size: 0.77rem;
+    font-weight: 500;
+  }
+  &__addDescription {
+    @include uploadInput;
+    height: 8.93rem;
+    margin-bottom: 2rem;
+    padding-top: 0.9rem;
+    @include tablet {
+      margin-bottom: 2.5rem;
+      border-bottom: solid 0.06rem $Mercury;
+    }
+    @include desktop {
+      flex-grow: 0.64;
+      height: 5.87rem;
+    }
+  }
+}

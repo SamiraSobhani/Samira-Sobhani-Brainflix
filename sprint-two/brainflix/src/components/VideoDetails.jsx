@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PlayVideo from "./PlayVideo"
 import views from "../assets/Icons/Icon-views.svg"
 import likes from "../assets/Icons/Icon-likes.svg"
 

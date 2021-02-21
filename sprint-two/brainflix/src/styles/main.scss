@@ -9,6 +9,10 @@
 @import "./component/commentList";
 @import "./component/userImage";
 @import "./component/playVideo";
+@import "./component/uploadButton";
+@import "./component/uploadForm";
+@import "./component/uploadHead";
+@import "./component/uploadImage";
 
 .main {
   @include desktop {
@@ -19,4 +23,8 @@
       margin-right: 2rem;
     }
   }
+}
+.imageForm {
+  display: flex;
+  border-bottom: solid 0.06rem $Mercury;
 }

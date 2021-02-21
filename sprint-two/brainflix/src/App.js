@@ -7,9 +7,7 @@ import Header from "./components/Header";
 import PlayVideo from "./components/PlayVideo";
 import VideoList from "./components/VideoList";
 import CommentList from "./components/CommentList";
-import CommentForm from "./components/CommentForm";
 import VideoDetails from "./components/VideoDetails";
-
 
 class App extends Component {
   state = {
@@ -58,18 +56,18 @@ class App extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     console.log("comp updated", this.props);
-    // watch out for infinite loops here!
-    const { id } = this.props.match.params; // destructuring, makes long lines of code shorter/more readable
-    // when comparing with scrict equality check === you may need to convert one value to a Number e.g. Number(id)
-    if (id !== undefined && prevState.VideosDescription.id !== Number(id)) {
+    const { id } = this.props.match.params;
+    console.log(id);
+
+    if (id !== undefined && prevState.videosDescription.id !== id) {
       this.getVideoDetails(id);
     }
-  };
+  }
 
   componentDidMount() {
     console.log(this.getVideoList());
     this.getVideoDetails("1af0jruup5gu");
-  };
+  }
 
   render() {
     return (
