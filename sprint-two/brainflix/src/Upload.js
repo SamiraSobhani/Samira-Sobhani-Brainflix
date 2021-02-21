@@ -9,6 +9,7 @@ import UploadButton from "./components/UploadButton";
 
 class Upload extends Component {
   state = {};
+
   render() {
     return (
       <div>
