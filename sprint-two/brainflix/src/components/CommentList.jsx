@@ -2,10 +2,11 @@ import React, { Component } from "react";
 import CommentForm from"./CommentForm";
 
 function Comments (props){
- 
-    // const currentVideo=props.VideosDescreption
-    // .find((description)=> description.id === props.currentVideoId)
-    const counter=props.VideosDescription.comments.length;
+
+  // const currentVideo=props.VideosDescreption
+    const counter=props.VideosDescription.comments;
+    // const counter=currentVideo.comments.length;
+  
   return(
     
     <>

@@ -30,6 +30,8 @@ class App extends Component {
     return moment(timeStamp).fromNow();
   };
 
+  // commentCounter = this.state.videosDescription.comments;
+
   getVideoList = () => {
     axios
       .get(
@@ -65,7 +67,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log(this.getVideoList());
     this.getVideoDetails("1af0jruup5gu");
   }
 
