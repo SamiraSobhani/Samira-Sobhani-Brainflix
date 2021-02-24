@@ -1,0 +1,89 @@
+@import "../partials/variables";
+@import "../partials/mixin";
+@import "../partials/general";
+
+.details {
+  &__head {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    @include tablet {
+      font-size: 2.26rem;
+      margin-bottom: 1.5rem;
+      margin-top: 3rem;
+    }
+  }
+  &__all {
+    border-bottom: 0.02rem solid $Mercury;
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__channeltime {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    justify-content: baseline;
+    @include tablet {
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+    }
+  }
+  &__channel {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 0;
+    @include desktop {
+      font-size: 1rem;
+    }
+  }
+  &__time {
+    margin-left: 0.5rem;
+    color: $silver;
+    font-size: 0.87rem;
+  }
+}
+.details {
+  &__vIcon {
+    margin-right: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  &__lIcon {
+    margin-right: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  &__viewsLikes {
+    display: flex;
+    @include desktop {
+      margin-right: 2rem;
+    }
+  }
+  &__views {
+    margin-right: 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  &__likes {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  &__description {
+    font-size: 0.81rem;
+    line-height: 1.12rem;
+    font-weight: 500;
+    margin-top: 1.5rem;
+    @include tablet {
+      font-size: 0.87rem;
+      margin-top: 2.5rem;
+      width: 73%;
+      line-height: 1.37rem;
+    }
+  }
+  @include desktop {
+    width: 44.5rem;
+  }
+}

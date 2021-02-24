@@ -1,0 +1,40 @@
+@import "../partials/variables";
+@import "../partials/mixin";
+@import "../partials/general";
+
+.button {
+  display: flex;
+  flex-direction: column;
+  @include tablet {
+    flex-direction: row-reverse;
+    margin-top: 2.5rem;
+  }
+  @include desktop {
+    margin-right: 11rem !important;
+  }
+
+  &__publish {
+    margin-bottom: 1.5rem;
+    background-color: $lightBlue;
+    height: 3rem;
+    border-radius: 0.3rem;
+    border-style: none;
+    font-size: 0.85rem;
+    color: $white;
+    @include tablet {
+      width: 10rem;
+      margin-left: 3rem;
+      font-size: 0.82rem;
+    }
+  }
+  &__cancel {
+    border-radius: 0.3rem;
+    border-style: none;
+    background-color: $white;
+    color: $lightBlue;
+    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0;
+  }
+}
