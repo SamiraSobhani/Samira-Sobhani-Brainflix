@@ -32,9 +32,7 @@ class App extends Component {
 
   getVideoList = () => {
     axios
-      .get(
-        "https://project-2-api.herokuapp.com/videos?api_key=0bd5893b-5519-44c9-9aa7-fc5fdcdbab73"
-      )
+      .get("http://localhost:8080/videos")
       .then((response) => {
         if (response.data.length !== 0) {
           this.setState({ videos: response.data });
@@ -45,9 +43,7 @@ class App extends Component {
 
   getVideoDetails = (currentVideoId) => {
     axios
-      .get(
-        `https://project-2-api.herokuapp.com/videos/${currentVideoId}?api_key=0bd5893b-5519-44c9-9aa7-fc5fdcdbab73`
-      )
+      .get(`http://localhost:8080/videos/${currentVideoId}`)
       .then((response) => {
         this.setState({ videosDescription: response.data });
       })
@@ -57,7 +53,6 @@ class App extends Component {
   componentDidUpdate(prevProps, prevState) {
     console.log("comp updated", this.props);
     const { id } = this.props.match.params;
-    console.log(id);
 
     if (id !== undefined && prevState.videosDescription.id !== id) {
       this.getVideoDetails(id);
