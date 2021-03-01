@@ -5,15 +5,13 @@
 .button {
   display: flex;
   flex-direction: column;
+
   @include tablet {
     flex-direction: row-reverse;
     padding-top: 2.5rem;
     border-top: solid 0.06rem $Mercury;
   }
-  @include desktop {
-    // margin-right: 11rem !important;
-    // border-top: 1088px;
-  }
+
 
   &__publish {
     margin-bottom: 1.5rem;

@@ -1018,11 +1018,6 @@ ul {
     border-top: solid 0.06rem #e1e1e1;
   }
 }
-@media (min-width: 1440px) {
-  .button {
-    margin-right: 11rem !important;
-  }
-}
 .button__publish {
   margin-bottom: 1.5rem;
   background-color: #0095ff;
@@ -1261,6 +1256,11 @@ ul {
   font-weight: 500;
   font-size: 0.8rem;
   margin-bottom: 0.2rem;
+}
+@media (min-width: 1440px) {
+  .upload__imageHead {
+    margin: 0;
+  }
 }
 .upload__image {
   width: 100%;
