@@ -4,7 +4,7 @@ const router = express.Router();
 const fs = require("fs");
 
 function loadVideosData() {
-  return fs.readFileSync("./data/video-details.json", "utf8");
+  return fs.readFileSync("./Data/video-details.json", "utf8");
 }
 
 router.get("/videos", (req, res) => {
@@ -27,7 +27,6 @@ router.get("/videos", (req, res) => {
 });
 
 router.get("/videos/:id", (req, res) => {
-  
   const videos = JSON.parse(loadVideosData());
   const video = videos.find((video) => video.id === req.params.id);
   if (!video) {
@@ -37,20 +36,71 @@ router.get("/videos/:id", (req, res) => {
   res.send(video);
 });
 
+router.post("/videos/:id/comments", (req, res) => {
+  console.log("inside router add comment");
+  const videos = JSON.parse(loadVideosData());
+  const video = videos.find((video) => video.id === req.params.id);
+  const comments = video.comments;
+  const newComment = {
+    name: req.body.name,
+    comment: req.body.comment,
+  };
+  comments.push(newComment);
+  fs.writeFileSync("./Data/video-details.json", JSON.stringify(videos));
+  res.json({
+    message: "posted to videos endpoint",
+    commentPosted: newComment,
+  });
+});
 
-// router.post("/videos/video", (req, res) => {
-// const videos = JSON.parse(loadVideosData());
+router.post("/", (req, res) => {
+  console.log("inside router post");
+  if (req.body.title === "" && req.body.description === "") {
+    console.log("POST ERROR EMPTY FIELD");
+    res.status(422).send("please enter a title and description");
+  } else {
+    const videos = JSON.parse(loadVideosData());
+    const newVideo = {
+      id: uuidv4(),
+      title: req.body.title,
+      description: req.body.description,
+      channel: "THR Channel",
+      comments: [
+        {
+          name: "Samira Sobhani",
+          comment:
+            "A city of more than 3,000 years old which has been the heartland of Persian culture for millennia,Shiraz is a city filled with historical mosques and beautiful gardens.",
+          id: uuidv4(),
+          likes: 0,
+        },
+        {
+          name: "Micheal Lyons",
+          comment:
+            "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of acconcert I have EVER witnessed.",
+          id: "1ab6d9f6-da38-456e-9b09-ab0acd9ce818",
+          likes: 0,
+        },
+        {
+          name: "Gary Wong",
+          comment:
+            "Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!",
+          id: "cc6f173d-9e9d-4501-918d-bc11f15a8e14",
+          likes: 0,
+        },
+      ],
+      likes: "400,058",
+      views: "2,043,765",
 
-// const video={
-//   id: uuidv4(),
-//   title: req.body.title,
-//   description: req.body.description,
-// }
-// videos.push(video);
+      image: "http://localhost:8080/Shiraz.jpg",
+    };
+    videos.push(newVideo);
+    fs.writeFileSync("./Data/video-details.json", JSON.stringify(videos));
 
-
-// res.send(videos.JSON.)
-// });
+    res.json({
+      message: "posted to videos endpoint",
+      videoPosted: newVideo,
+    });
+  }
+});
 
 module.exports = router;
-

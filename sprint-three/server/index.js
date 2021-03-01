@@ -17,15 +17,7 @@ app.use((req, res, next) => {
 app.use("/", videos);
 
 app.get("/", (req, res) => {
-  res.json({
-    welcome: "welcome to my API",
-    routes: {
-      videos: {
-        get: "get all videos",
-        url: "http://localhost:8080/videos",
-      },
-    },
-  });
-});
+  res.json({welcome: "welcome to my API"})});
+
 
 app.listen(8080, () => console.log("listening on port 8080"));

@@ -5,7 +5,6 @@ import Header from "./components/Header";
 import UploadHead from "./components/UploadHead";
 import UploadForm from "./components/UploadForm";
 import UploadImage from "./components/UploadImage";
-import UploadButton from "./components/UploadButton";
 
 class Upload extends Component {
   state = {};
@@ -21,7 +20,6 @@ class Upload extends Component {
             <UploadForm />
           </div>
         </main>
-        <UploadButton />
       </div>
     );
   }
