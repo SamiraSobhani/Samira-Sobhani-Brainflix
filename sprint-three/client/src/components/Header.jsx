@@ -18,7 +18,7 @@ class Header extends Component {
 
     return (
       <section className="header container">
-        <NavLink className="header__logo" to="/videos">
+        <NavLink className="header__logo" to="/">
         <img  src={logo} alt="logo" />
         </NavLink>
         <Input

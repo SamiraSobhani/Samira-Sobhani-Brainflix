@@ -5,9 +5,9 @@
 .form {
   display: flex;
   flex-direction: column;
-  @include tablet {
-    border-bottom: solid 0.06rem $Mercury;
-  }
+  // @include tablet {
+  //   border-bottom: solid 0.06rem $Mercury;
+  // }
   @include desktop {
     width: 100%;
     border-bottom: none;
@@ -36,7 +36,6 @@
     padding-top: 0.9rem;
     @include tablet {
       margin-bottom: 2.5rem;
-      border-bottom: solid 0.06rem $Mercury;
     }
     @include desktop {
       flex-grow: 0.64;

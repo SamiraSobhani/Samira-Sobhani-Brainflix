@@ -10,6 +10,7 @@
   margin-top: 0;
   margin-bottom: 2rem;
   @include tablet {
+    font-size: 2.25rem;
     padding-top: 3rem;
     border-bottom: solid 0.15rem $Mercury;
     margin-bottom: 2.5rem;

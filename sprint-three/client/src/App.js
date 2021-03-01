@@ -7,7 +7,6 @@ import Header from "./components/Header";
 import PlayVideo from "./components/PlayVideo";
 import VideoList from "./components/VideoList";
 import CommentList from "./components/CommentList";
-import CommentForm from "./components/CommentForm";
 import VideoDetails from "./components/VideoDetails";
 
 class App extends Component {
@@ -50,19 +49,6 @@ class App extends Component {
       .catch((error) => console.log(error));
   };
 
-  addComment = (currentVideoId) => {
-    axios
-      .post(`http://localhost:8080/videos/${currentVideoId}/comments`, {
-        comment: this.state.comment,
-      })
-      .then((res) => {
-        this.setState({
-          comment: "",
-        });
-      })
-      .catch((err) => console.log(err));
-  };
-
   componentDidUpdate(prevProps, prevState) {
     const { id } = this.props.match.params;
     if (id !== undefined && prevState.videosDescription.id !== id) {
@@ -90,10 +76,7 @@ class App extends Component {
               currentVideoId={this.state.currentVideoId}
               formatedDate={this.formatedDate}
             />
-            <CommentForm
-              VideosDescription={this.state.videosDescription}
-              addComment={this.addComment}
-            />
+
             <CommentList
               currentVideoId={this.state.currentVideoId}
               VideosDescription={this.state.videosDescription}

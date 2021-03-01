@@ -36,23 +36,6 @@ router.get("/videos/:id", (req, res) => {
   res.send(video);
 });
 
-router.post("/videos/:id/comments", (req, res) => {
-  console.log("inside router add comment");
-  const videos = JSON.parse(loadVideosData());
-  const video = videos.find((video) => video.id === req.params.id);
-  const comments = video.comments;
-  const newComment = {
-    name: req.body.name,
-    comment: req.body.comment,
-  };
-  comments.push(newComment);
-  fs.writeFileSync("./Data/video-details.json", JSON.stringify(videos));
-  res.json({
-    message: "posted to videos endpoint",
-    commentPosted: newComment,
-  });
-});
-
 router.post("/", (req, res) => {
   console.log("inside router post");
   if (req.body.title === "" && req.body.description === "") {
@@ -66,13 +49,6 @@ router.post("/", (req, res) => {
       description: req.body.description,
       channel: "THR Channel",
       comments: [
-        {
-          name: "Samira Sobhani",
-          comment:
-            "A city of more than 3,000 years old which has been the heartland of Persian culture for millennia,Shiraz is a city filled with historical mosques and beautiful gardens.",
-          id: uuidv4(),
-          likes: 0,
-        },
         {
           name: "Micheal Lyons",
           comment:
