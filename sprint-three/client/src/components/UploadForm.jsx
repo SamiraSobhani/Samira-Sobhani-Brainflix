@@ -46,6 +46,7 @@ class UploadForm extends Component {
         title: "",
         description: "",
       });
+      window.location.reload(false);
     })
     .catch((err) => console.log(err));
   };
